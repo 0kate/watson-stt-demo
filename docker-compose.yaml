@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    image: backend:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./backend:/opt/backend"
+    environment:
+      API_KEY: "API_KEY_HERE"
+  frontend:
+    build: ./frontend
+    image: frontend:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./frontend:/opt/frontend"
+      - "/opt/frontend/node_modules"

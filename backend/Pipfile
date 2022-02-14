@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+ibm-watson = "*"
+ibm-cloud-sdk-core = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+tests = "python -m unittest discover ./tests"
+start = "uvicorn main:app --host 0.0.0.0 --reload"
